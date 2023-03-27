@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:machine_test/screens/login_screen.dart';
 import 'package:machine_test/screens/welcome_screen.dart';
 
 void main() {
@@ -12,10 +13,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: 'Bus List',
       debugShowCheckedModeBanner: false,
-      home: WelcomeScreen(),
+      initialRoute: WelcomeScreen.id,
+      routes: {
+        WelcomeScreen.id: (context) => const WelcomeScreen(),
+        LoginScreen.id: (context) => const LoginScreen(),
+      },
     );
   }
 }
