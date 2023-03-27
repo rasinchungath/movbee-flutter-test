@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:machine_test/custom%20widgets/custom_button.dart';
+import 'package:machine_test/custom%20widgets/logo.dart';
 import 'package:machine_test/screens/login_screen.dart';
 import '../constants/colors.dart';
 
@@ -24,22 +25,7 @@ class WelcomeScreen extends StatelessWidget {
               const SizedBox(
                 height: 340,
               ),
-              Stack(
-                children: [
-                  SizedBox(
-                      height: 60,
-                      child: Image.asset('assets/images/moovbe.png')),
-                  Positioned(
-                    right: 52,
-                    top: -5,
-                    child: Image.asset(
-                      'assets/images/Polygon 1.png',
-                      height: 24.28,
-                      width: 26.39,
-                    ),
-                  ),
-                ],
-              ),
+              const MovbeeLogo(),
               const SizedBox(
                 height: 270,
               ),

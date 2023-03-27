@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:machine_test/screens/bus_list_screen.dart';
 import 'package:machine_test/screens/login_screen.dart';
 import 'package:machine_test/screens/welcome_screen.dart';
 
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
       routes: {
         WelcomeScreen.id: (context) => const WelcomeScreen(),
         LoginScreen.id: (context) => const LoginScreen(),
+        BusListScreen.id: (context) => const BusListScreen(),
       },
     );
   }
