@@ -9,8 +9,8 @@ class DriverCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){
-        Navigator.pushNamed(context,  DriversList.id);
+      onTap: () {
+        Navigator.pushNamed(context, DriversList.id);
       },
       child: Stack(
         children: [

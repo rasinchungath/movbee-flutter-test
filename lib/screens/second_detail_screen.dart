@@ -4,7 +4,7 @@ import '../utils/appbars.dart';
 import '../utils/liscence_card.dart';
 
 class SecondDetailScreen extends StatelessWidget {
-   static const String id = 'second_detail_screen';
+  static const String id = 'second_detail_screen';
   const SecondDetailScreen({super.key});
 
   @override
@@ -16,47 +16,46 @@ class SecondDetailScreen extends StatelessWidget {
           children: [
             const LiscenceCard(),
             Container(
-                width: 283,
-                height: 450,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(13),
-                  border: Border.all(width: 1, color: const Color(0xFFDCDCDC)),
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(right: 20),
-                      child: Stack(
-                        children: [
-                          SizedBox(
-                            height: 29,
-                            child: Image.asset(
-                              'assets/images/Union.png',
-                            ),
+              width: 283,
+              height: 450,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(13),
+                border: Border.all(width: 1, color: const Color(0xFFDCDCDC)),
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(right: 20),
+                    child: Stack(
+                      children: [
+                        SizedBox(
+                          height: 29,
+                          child: Image.asset(
+                            'assets/images/Union.png',
                           ),
-                          Positioned(
-                            bottom: 12,
-                            right: 14,
-                            child:
-                                Image.asset('assets/images/Rectangle 661.png'),
-                          ),
-                        ],
-                      ),
+                        ),
+                        Positioned(
+                          bottom: 12,
+                          right: 14,
+                          child: Image.asset('assets/images/Rectangle 661.png'),
+                        ),
+                      ],
                     ),
-                    const BusSeatThree(),
-                    const BusSeatThree(),
-                    const BusSeatThree(),
-                    const BusSeatThree(),
-                    const BusSeatThree(),
-                    const BusSeatThree(),
-                    const BusSeatThree(),
-                    const BusSeatThree(),
-                    const BusSeatThree(),
-                   
-                  ],
-                ),),
+                  ),
+                  const BusSeatThree(),
+                  const BusSeatThree(),
+                  const BusSeatThree(),
+                  const BusSeatThree(),
+                  const BusSeatThree(),
+                  const BusSeatThree(),
+                  const BusSeatThree(),
+                  const BusSeatThree(),
+                  const BusSeatThree(),
+                ],
+              ),
+            ),
           ],
         ),
       ),

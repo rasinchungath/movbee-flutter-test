@@ -30,9 +30,7 @@ class BusSeatTwo extends StatelessWidget {
 
 Widget seatImage() {
   return GestureDetector(
-    onTap: () {
-      
-    },
+    onTap: () {},
     child: Stack(
       children: [
         SizedBox(

@@ -13,7 +13,6 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-     
       body: Column(
         children: [
           Stack(
@@ -56,26 +55,32 @@ class LoginScreen extends StatelessWidget {
           const SizedBox(
             height: 50,
           ),
-          CustomTextField(hintLabel: 'Enter Username',),
+          CustomTextField(
+            hintLabel: 'Enter Username',
+          ),
           const SizedBox(
             height: 20,
           ),
-          CustomTextField(hintLabel: 'Enter Password',),
+          CustomTextField(
+            hintLabel: 'Enter Password',
+          ),
           const SizedBox(
             height: 200,
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 20, right: 20,),
-            child: CustomButton(label: 'Login',  
-            buttonColor: kRedBGColor, 
-            onpressed: (){
-              Navigator.pushReplacementNamed(context, HomeScreen.id);
-            }, 
-            textColor: kWhiteBGColor,),
+            padding: const EdgeInsets.only(
+              left: 20,
+              right: 20,
+            ),
+            child: CustomButton(
+              label: 'Login',
+              buttonColor: kRedBGColor,
+              onpressed: () {
+                Navigator.pushReplacementNamed(context, HomeScreen.id);
+              },
+              textColor: kWhiteBGColor,
+            ),
           ),
-          
-
-         
         ],
       ),
     );

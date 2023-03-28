@@ -2,83 +2,82 @@ import 'package:flutter/material.dart';
 
 import '../constants/colors.dart';
 
-AppBar appBar(){
-  return  AppBar(
-        toolbarHeight: 100, 
-        flexibleSpace: Container(
-          color: kPrimaryColor,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+AppBar appBar() {
+  return AppBar(
+    toolbarHeight: 100,
+    flexibleSpace: Container(
+      color: kPrimaryColor,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const SizedBox(
+            height: 55,
+          ),
+          Stack(
             children: [
-              const SizedBox(
-                height: 55,
+              SizedBox(
+                height: 35,
+                width: 126,
+                child: Image.asset(
+                  'assets/images/moovbe.png',
+                ),
               ),
-              Stack(
-                children: [
-                  SizedBox(
-                    height: 35,
-                    width: 126,
-                    child: Image.asset(
-                      'assets/images/moovbe.png',
-                    ),
-                  ),
-                  Positioned(
-                    right: 6,
-                    top: -10,
-                    child: Image.asset(
-                      'assets/images/Polygon 1.png',
-                      height: 24.28,
-                      width: 26.39,
-                    ),
-                  ),
-                ],
+              Positioned(
+                right: 6,
+                top: -10,
+                child: Image.asset(
+                  'assets/images/Polygon 1.png',
+                  height: 24.28,
+                  width: 26.39,
+                ),
               ),
             ],
           ),
-        ),
-      );
+        ],
+      ),
+    ),
+  );
 }
 
-AppBar busDetailAppbar(BuildContext context, String text, double width){
+AppBar busDetailAppbar(BuildContext context, String text, double width) {
   return AppBar(
-        automaticallyImplyLeading: false,
-        toolbarHeight: 100,
-        flexibleSpace: Container(
-          color: kPrimaryColor,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+    automaticallyImplyLeading: false,
+    toolbarHeight: 100,
+    flexibleSpace: Container(
+      color: kPrimaryColor,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const SizedBox(
+            height: 55,
+          ),
+          Row(
             children: [
-              const SizedBox(
-                height: 55,
+              IconButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                icon: const Icon(
+                  Icons.arrow_back,
+                  color: kWhiteBGColor,
+                  size: 28,
+                ),
               ),
-              Row(
-                children: [
-                  IconButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    icon: const Icon(
-                      Icons.arrow_back,
-                      color: kWhiteBGColor,
-                      size: 28,
-                    ),
-                  ),
-                  SizedBox(
-                    width: width,
-                  ),
-                   Text(
-                   text,
-                    style: const TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.w500,
-                      color: kWhiteBGColor,
-                    ),
-                  )
-                ],
+              SizedBox(
+                width: width,
+              ),
+              Text(
+                text,
+                style: const TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.w500,
+                  color: kWhiteBGColor,
+                ),
               )
             ],
-          ),
-        ),
-      );
+          )
+        ],
+      ),
+    ),
+  );
 }
-

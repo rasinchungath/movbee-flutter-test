@@ -8,8 +8,8 @@ class BusCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){
-         Navigator.pushNamed(context,  SecondDetailScreen.id);
+      onTap: () {
+        Navigator.pushNamed(context, SecondDetailScreen.id);
       },
       child: Stack(
         children: [
