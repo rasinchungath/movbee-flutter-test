@@ -5,33 +5,33 @@ class BusSeatTwo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Padding(
-                padding: const EdgeInsets.only(left: 20, right: 20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Row(
-                      children: [
-                        seatImage(),
-                        seatImage(),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        seatImage(),
-                        seatImage(),
-                      ],
-                    ),
-                  ],
-                ),
-              );
+    return Padding(
+      padding: const EdgeInsets.only(left: 20, right: 20),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Row(
+            children: [
+              seatImage(),
+              seatImage(),
+            ],
+          ),
+          Row(
+            children: [
+              seatImage(),
+              seatImage(),
+            ],
+          ),
+        ],
+      ),
+    );
   }
 }
 
 Widget seatImage() {
   return GestureDetector(
     onTap: () {
-      print('pressed');
+      
     },
     child: Stack(
       children: [
@@ -50,5 +50,3 @@ Widget seatImage() {
     ),
   );
 }
-
-
