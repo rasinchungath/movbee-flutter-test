@@ -11,7 +11,11 @@ class AddDriverScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: busDetailAppbar(context, 'Add Driver', 90),
+      appBar: busDetailAppbar(
+        context,
+        'Add Driver',
+        82,
+      ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

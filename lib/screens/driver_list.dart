@@ -12,7 +12,11 @@ class DriversList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: busDetailAppbar(context, 'Driver List', 90),
+      appBar: busDetailAppbar(
+        context,
+        'Driver List',
+        82,
+      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(20.0),
