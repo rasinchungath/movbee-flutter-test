@@ -3,14 +3,22 @@ import 'package:flutter/material.dart';
 import '../constants/colors.dart';
 
 class BusManageCard extends StatelessWidget {
-  const BusManageCard({super.key});
+  const BusManageCard(
+      {super.key,
+      required this.image,
+      required this.title,
+      required this.subTitle,
+      required this.buttonText});
+  final String image;
+  final String buttonText;
+  final String title;
+  final String subTitle;
 
   @override
   Widget build(BuildContext context) {
-    return  Container(
+    return Container(
       decoration: BoxDecoration(
-        border: Border.all(
-            width: 0.3, color: const Color(0xFFC1C1C1)),
+        border: Border.all(width: 0.3, color: const Color(0xFFC1C1C1)),
         borderRadius: BorderRadius.circular(10),
         color: kWhiteBGColor,
         boxShadow: const [
@@ -32,7 +40,7 @@ class BusManageCard extends StatelessWidget {
                     topLeft: Radius.circular(10),
                     bottomLeft: Radius.circular(10))),
             child: Image.asset(
-              'assets/images/image 3.png',
+              image,
             ),
           ),
           const SizedBox(
@@ -41,18 +49,18 @@ class BusManageCard extends StatelessWidget {
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
+            children: [
               Text(
-                'KSRTC',
-                style: TextStyle(
+                title,
+                style: const TextStyle(
                   fontSize: 10,
                   fontWeight: FontWeight.w500,
                   color: Color(0xff474747),
                 ),
               ),
               Text(
-                'Swift Scania P-series',
-                style: TextStyle(
+                subTitle,
+                style: const TextStyle(
                   fontSize: 10,
                   fontWeight: FontWeight.w500,
                   color: Color(0xff474747),
@@ -66,19 +74,20 @@ class BusManageCard extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: () {},
                 style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStateProperty.all(kRedBGColor),
-                  shape: MaterialStateProperty.all<
-                      RoundedRectangleBorder>(
+                  backgroundColor: MaterialStateProperty.all(kRedBGColor),
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                     RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(4),
                     ),
                   ),
                 ),
-                child: const Text('manage', style: TextStyle(
-                  fontSize: 10,
-                  fontWeight: FontWeight.w400,
-                ),),
+                child: Text(
+                  buttonText,
+                  style: const TextStyle(
+                    fontSize: 10,
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
               ),
             ),
           ),

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:machine_test/utils/bus_seat3.dart';
-
 import '../utils/appbars.dart';
 import '../utils/liscence_card.dart';
 
@@ -11,7 +10,7 @@ class SecondDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: busDetailAppbar(context),
+      appBar: busDetailAppbar(context, 'KSRTC Swift Scania P-series', 10),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -46,15 +45,15 @@ class SecondDetailScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-                    BusSeatThree(),
-                    BusSeatThree(),
-                    BusSeatThree(),
-                    BusSeatThree(),
-                    BusSeatThree(),
-                    BusSeatThree(),
-                    BusSeatThree(),
-                    BusSeatThree(),
-                    BusSeatThree(),
+                    const BusSeatThree(),
+                    const BusSeatThree(),
+                    const BusSeatThree(),
+                    const BusSeatThree(),
+                    const BusSeatThree(),
+                    const BusSeatThree(),
+                    const BusSeatThree(),
+                    const BusSeatThree(),
+                    const BusSeatThree(),
                    
                   ],
                 ),),

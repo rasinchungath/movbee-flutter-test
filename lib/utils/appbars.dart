@@ -39,7 +39,7 @@ AppBar appBar(){
       );
 }
 
-AppBar busDetailAppbar(BuildContext context){
+AppBar busDetailAppbar(BuildContext context, String text, double width){
   return AppBar(
         automaticallyImplyLeading: false,
         toolbarHeight: 100,
@@ -63,12 +63,12 @@ AppBar busDetailAppbar(BuildContext context){
                       size: 28,
                     ),
                   ),
-                  const SizedBox(
-                    width: 10,
+                  SizedBox(
+                    width: width,
                   ),
-                  const Text(
-                    'KSRTC Swift Scania P-series',
-                    style: TextStyle(
+                   Text(
+                   text,
+                    style: const TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.w500,
                       color: kWhiteBGColor,

@@ -13,14 +13,12 @@ class BusSeatThree extends StatelessWidget {
           Row(
             children: [
               seatImage(),
-             
-
             ],
           ),
           Row(
             children: [
               seatImage(),
-               seatImage(),
+              seatImage(),
               seatImage(),
             ],
           ),
@@ -32,9 +30,7 @@ class BusSeatThree extends StatelessWidget {
 
 Widget seatImage() {
   return GestureDetector(
-    onTap: () {
-      
-    },
+    onTap: () {},
     child: Stack(
       children: [
         SizedBox(

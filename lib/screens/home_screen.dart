@@ -13,7 +13,6 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        
         appBar: appBar(),
         body: SingleChildScrollView(
           child: Padding(
@@ -54,7 +53,12 @@ class HomeScreen extends StatelessWidget {
                   itemCount: 10,
                   itemBuilder: (context, index) => const Padding(
                     padding: EdgeInsets.only(bottom: 15),
-                    child: BusManageCard(),
+                    child: BusManageCard(
+                      image: 'assets/images/image 3.png',
+                      title: 'KSRTC',
+                      subTitle: 'Swift Scania P-series',
+                      buttonText: 'Manage',
+                    ),
                   ),
                 ),
               ],

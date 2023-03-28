@@ -16,7 +16,7 @@ class _BusDetailScreenState extends State<BusDetailScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: busDetailAppbar(context),
+      appBar: busDetailAppbar(context, 'KSRTC Swift Scania P-series', 10),
       body: SingleChildScrollView(
         child: Column(
           children: [

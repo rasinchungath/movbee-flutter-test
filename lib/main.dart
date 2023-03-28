@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:machine_test/constants/colors.dart';
 import 'package:machine_test/screens/bus_detail_screen.dart';
+import 'package:machine_test/screens/driver_list.dart';
 import 'package:machine_test/screens/home_screen.dart';
 import 'package:machine_test/screens/login_screen.dart';
 import 'package:machine_test/screens/second_detail_screen.dart';
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
         HomeScreen.id: (context) => const HomeScreen(),
        BusDetailScreen.id:  (context) => const  BusDetailScreen(),
        SecondDetailScreen.id:(context) => const  SecondDetailScreen(),
+       DriversList.id: (context) => const  DriversList(),
        
       },
     );
