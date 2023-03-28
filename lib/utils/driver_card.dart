@@ -21,7 +21,7 @@ class DriverCard extends StatelessWidget {
           right: 9,
           child: Image.asset(
             'assets/images/driver.png',
-            height: 117,
+            height: 115,
           ),
         ),
         Positioned(

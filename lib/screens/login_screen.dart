@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:machine_test/constants/colors.dart';
 import 'package:machine_test/custom%20widgets/custom_button.dart';
-import 'package:machine_test/screens/bus_list_screen.dart';
+import 'package:machine_test/screens/home_screen.dart';
 
 import '../custom widgets/custom_textfield.dart';
 
@@ -13,7 +13,7 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: kWhiteBGColor,
+     
       body: Column(
         children: [
           Stack(
@@ -69,7 +69,7 @@ class LoginScreen extends StatelessWidget {
             child: CustomButton(label: 'Login',  
             buttonColor: kRedBGColor, 
             onpressed: (){
-              Navigator.pushReplacementNamed(context, BusListScreen.id);
+              Navigator.pushReplacementNamed(context, HomeScreen.id);
             }, 
             textColor: kWhiteBGColor,),
           ),
