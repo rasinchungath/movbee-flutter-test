@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:machine_test/screens/bus_detail_screen.dart';
-
 import '../constants/colors.dart';
+import '../screens/second_detail_screen.dart';
 
 class BusCard extends StatelessWidget {
   const BusCard({super.key});
@@ -10,7 +9,7 @@ class BusCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: (){
-         Navigator.pushNamed(context, BusDetailScreen.id);
+         Navigator.pushNamed(context,  SecondDetailScreen.id);
       },
       child: Stack(
         children: [

@@ -3,6 +3,7 @@ import 'package:machine_test/constants/colors.dart';
 import 'package:machine_test/screens/bus_detail_screen.dart';
 import 'package:machine_test/screens/home_screen.dart';
 import 'package:machine_test/screens/login_screen.dart';
+import 'package:machine_test/screens/second_detail_screen.dart';
 import 'package:machine_test/screens/welcome_screen.dart';
 
 void main() {
@@ -27,7 +28,9 @@ class MyApp extends StatelessWidget {
         WelcomeScreen.id: (context) => const WelcomeScreen(),
         LoginScreen.id: (context) => const LoginScreen(),
         HomeScreen.id: (context) => const HomeScreen(),
-       BusDetailScreen.id:  (context) => const  BusDetailScreen()
+       BusDetailScreen.id:  (context) => const  BusDetailScreen(),
+       SecondDetailScreen.id:(context) => const  SecondDetailScreen(),
+       
       },
     );
   }

@@ -1,18 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:machine_test/utils/appbars.dart';
-import 'package:machine_test/utils/liscence_card.dart';
+import 'package:machine_test/utils/bus_seat3.dart';
 
-import '../utils/bus_seat2.dart';
+import '../utils/appbars.dart';
+import '../utils/liscence_card.dart';
 
-class BusDetailScreen extends StatefulWidget {
-  static const String id = 'busDetail_screen';
-  const BusDetailScreen({super.key});
+class SecondDetailScreen extends StatelessWidget {
+   static const String id = 'second_detail_screen';
+  const SecondDetailScreen({super.key});
 
-  @override
-  State<BusDetailScreen> createState() => _BusDetailScreenState();
-}
-
-class _BusDetailScreenState extends State<BusDetailScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,17 +46,18 @@ class _BusDetailScreenState extends State<BusDetailScreen> {
                         ],
                       ),
                     ),
-                    const BusSeatTwo(),
-                    const BusSeatTwo(),
-                    const BusSeatTwo(),
-                    const BusSeatTwo(),
-                    const BusSeatTwo(),
-                    const BusSeatTwo(),
-                    const BusSeatTwo(),
-                    const BusSeatTwo(),
-                    const BusSeatTwo(),
+                    BusSeatThree(),
+                    BusSeatThree(),
+                    BusSeatThree(),
+                    BusSeatThree(),
+                    BusSeatThree(),
+                    BusSeatThree(),
+                    BusSeatThree(),
+                    BusSeatThree(),
+                    BusSeatThree(),
+                   
                   ],
-                )),
+                ),),
           ],
         ),
       ),
