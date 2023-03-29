@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:machine_test/constants/colors.dart';
+import 'package:provider/provider.dart';
 import '../custom widgets/custom_button.dart';
+import '../provider/login_controller.dart';
 import '../utils/appbars.dart';
 import '../utils/bus_manage_card.dart';
 import 'add_driver_screen.dart';
@@ -11,6 +13,7 @@ class DriversList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final pro = Provider.of<Controller>(context, listen: true);
     return Scaffold(
       appBar: busDetailAppbar(
         context,
@@ -23,9 +26,11 @@ class DriversList extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
-                '21 Drivers Found',
-                style: TextStyle(
+              Text(
+                pro.driverdata!['driver_list'].length > 1
+                    ? '${pro.driverdata!['driver_list'].length} Drivers Found'
+                    : '${pro.driverdata!['driver_list'].length} Driver Found',
+                style: const TextStyle(
                   fontWeight: FontWeight.w500,
                   fontSize: 13,
                   color: Color(0xFF6B6B6B),
@@ -35,19 +40,24 @@ class DriversList extends StatelessWidget {
                 height: 10,
               ),
               ListView.builder(
-                shrinkWrap: true,
-                physics: const ScrollPhysics(),
-                itemCount: 5,
-                itemBuilder: (context, index) => const Padding(
-                  padding: EdgeInsets.only(bottom: 15),
-                  child: BusManageCard(
-                    image: 'assets/images/Ellipse.png',
-                    title: 'Rohit Sharma',
-                    subTitle: 'Licn no: PJ5151961616',
-                    buttonText: 'Delete',
-                  ),
-                ),
-              ),
+                  shrinkWrap: true,
+                  physics: const ScrollPhysics(),
+                  itemCount: pro.driverdata!['driver_list'].length,
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding: EdgeInsets.only(bottom: 15),
+                      child: BusManageCard(
+                        onpressed: ()async{
+                          await pro.deleteDriver(driverId: pro.driverdata!['driver_list'][index]['id'], context: context);
+                        },
+                        image: 'assets/images/Ellipse.png',
+                        title: pro.driverdata!['driver_list'][index]['name'],
+                        subTitle: pro.driverdata!['driver_list'][index]
+                            ['license_no'],
+                        buttonText: 'Delete',
+                      ),
+                    );
+                  }),
             ],
           ),
         ),

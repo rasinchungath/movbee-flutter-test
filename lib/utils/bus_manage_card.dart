@@ -8,11 +8,14 @@ class BusManageCard extends StatelessWidget {
       required this.image,
       required this.title,
       required this.subTitle,
-      required this.buttonText});
+      required this.buttonText,
+      required this.onpressed,
+      });
   final String image;
   final String buttonText;
   final String title;
   final String subTitle;
+  final VoidCallback onpressed;
 
   @override
   Widget build(BuildContext context) {
@@ -46,33 +49,35 @@ class BusManageCard extends StatelessWidget {
           const SizedBox(
             width: 10,
           ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                title,
-                style: const TextStyle(
-                  fontSize: 10,
-                  fontWeight: FontWeight.w500,
-                  color: Color(0xff474747),
+          Expanded(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: const TextStyle(
+                    fontSize: 10,
+                    fontWeight: FontWeight.w500,
+                    color: Color(0xff474747),
+                  ),
                 ),
-              ),
-              Text(
-                subTitle,
-                style: const TextStyle(
-                  fontSize: 10,
-                  fontWeight: FontWeight.w500,
-                  color: Color(0xff474747),
+                Text(
+                  subTitle,
+                  style: const TextStyle(
+                    fontSize: 10,
+                    fontWeight: FontWeight.w500,
+                    color: Color(0xff474747),
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
           Expanded(
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: onpressed,
                 style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(kRedBGColor),
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(

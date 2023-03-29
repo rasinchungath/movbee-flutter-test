@@ -1,15 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:machine_test/constants/colors.dart';
 import 'package:machine_test/custom%20widgets/custom_textfield.dart';
+import 'package:provider/provider.dart';
 import '../custom widgets/custom_button.dart';
+import '../provider/login_controller.dart';
 import '../utils/appbars.dart';
 
 class AddDriverScreen extends StatelessWidget {
   static const String id = 'addDriver_screen';
-  const AddDriverScreen({super.key});
+  AddDriverScreen({super.key});
+  TextEditingController nameController = TextEditingController();
+  TextEditingController lisenceController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
+     final pro = Provider.of<Controller>(context, listen: false);
+
     return Scaffold(
       appBar: busDetailAppbar(
         context,
@@ -24,11 +30,17 @@ class AddDriverScreen extends StatelessWidget {
               const SizedBox(
                 height: 40,
               ),
-              CustomTextField(hintLabel: 'Enter Name'),
+              CustomTextField(
+                controller:nameController ,
+                hintLabel: 'Enter Name',
+              ),
               const SizedBox(
                 height: 20,
               ),
-              CustomTextField(hintLabel: 'Enter License Number'),
+              CustomTextField(
+                controller: lisenceController,
+                hintLabel: 'Enter License Number',
+                ),
             ],
           ),
           Padding(
@@ -36,7 +48,10 @@ class AddDriverScreen extends StatelessWidget {
             child: CustomButton(
               label: 'Save',
               buttonColor: kRedBGColor,
-              onpressed: () {},
+              onpressed: () async {
+                await pro.addDriver(name: nameController.text, mobile: '123456', license_no: lisenceController.text, context: context);
+                print('sucesss');
+              },
               textColor: kWhiteBGColor,
             ),
           )

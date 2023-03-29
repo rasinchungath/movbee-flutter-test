@@ -1,16 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:machine_test/constants/colors.dart';
 import 'package:machine_test/custom%20widgets/custom_button.dart';
+import 'package:machine_test/custom%20widgets/snackbar.dart';
+import 'package:machine_test/provider/login_controller.dart';
 import 'package:machine_test/screens/home_screen.dart';
+import 'package:machine_test/services/bus_services.dart';
+import 'package:provider/provider.dart';
 
 import '../custom widgets/custom_textfield.dart';
 
 class LoginScreen extends StatelessWidget {
   static const String id = 'login_screen';
-  const LoginScreen({super.key});
+  LoginScreen({super.key});
+  TextEditingController usernameController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
+    final loginUser = Provider.of<Controller>(context, listen: false);
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Column(
@@ -56,12 +63,14 @@ class LoginScreen extends StatelessWidget {
             height: 50,
           ),
           CustomTextField(
+            controller: usernameController,
             hintLabel: 'Enter Username',
           ),
           const SizedBox(
             height: 20,
           ),
           CustomTextField(
+            controller: passwordController,
             hintLabel: 'Enter Password',
           ),
           const SizedBox(
@@ -75,8 +84,24 @@ class LoginScreen extends StatelessWidget {
             child: CustomButton(
               label: 'Login',
               buttonColor: kRedBGColor,
-              onpressed: () {
-                Navigator.pushReplacementNamed(context, HomeScreen.id);
+              onpressed: () async {
+                if (usernameController.text.isNotEmpty &&
+                    passwordController.text.isNotEmpty) {
+                  await loginUser.loginUser(
+                      usernameController.text, passwordController.text);
+
+                  if (loginUser.data!['status'] == true) {
+                    await BusServices().getBusList(
+                      context: context
+                    );
+
+                    Navigator.pushReplacementNamed(context, HomeScreen.id);
+                  } else {
+                    showSnackBar(context, 'verification failed');
+                  }
+                } else {
+                  showSnackBar(context, 'Enter correct username and password');
+                }
               },
               textColor: kWhiteBGColor,
             ),

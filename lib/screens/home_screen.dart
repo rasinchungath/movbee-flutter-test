@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:machine_test/constants/colors.dart';
+import 'package:provider/provider.dart';
+import '../provider/login_controller.dart';
 import '../utils/bus_card.dart';
 import '../utils/appbars.dart';
 import '../utils/bus_manage_card.dart';
 import '../utils/driver_card.dart';
+import 'bus_detail_screen.dart';
+import 'driver_list.dart';
 
 class HomeScreen extends StatelessWidget {
   static const String id = 'home_Screen';
@@ -12,6 +15,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loginUser = Provider.of<Controller>(context, listen: true);
     return Scaffold(
         appBar: appBar(),
         body: SingleChildScrollView(
@@ -28,15 +32,30 @@ class HomeScreen extends StatelessWidget {
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    BusCard(),
-                    DriverCard(),
+                  children:  [
+                    GestureDetector(
+                      onTap: (){
+                         Navigator.pushNamed(context, BusDetailScreen.id);
+                      },
+                      child: const BusCard(),),
+                    GestureDetector(
+                      onTap: ()async {
+                      await loginUser.getDriverList(
+                     context: context
+                    );
+                        
+                        Navigator.pushNamed(context, DriversList.id);
+                        
+                      },
+                      child: DriverCard(),),
                   ],
                 ),
                 const SizedBox(
                   height: 20,
                 ),
-                const Text(
+                 const Text(
+                   //loginUser.data!['bus_list'].length == null ? '0 Buses Found':'${loginUser.data!['bus_list'].length} Buses Found',
+
                   '21 Buses Found',
                   style: TextStyle(
                     fontWeight: FontWeight.w500,
@@ -51,9 +70,11 @@ class HomeScreen extends StatelessWidget {
                   shrinkWrap: true,
                   physics: const ScrollPhysics(),
                   itemCount: 10,
-                  itemBuilder: (context, index) => const Padding(
+                  //itemCount: loginUser.data!['bus_list'].length,
+                  itemBuilder: (context, index) =>Padding(
                     padding: EdgeInsets.only(bottom: 15),
                     child: BusManageCard(
+                      onpressed: (){},
                       image: 'assets/images/image 3.png',
                       title: 'KSRTC',
                       subTitle: 'Swift Scania P-series',

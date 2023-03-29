@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import '../constants/colors.dart';
 
 class CustomTextField extends StatelessWidget {
-  CustomTextField({super.key, required this.hintLabel});
+  const CustomTextField({super.key, required this.hintLabel,  required this.controller});
   final String hintLabel;
+  final TextEditingController controller;
 
   @override
   Widget build(BuildContext context) {
@@ -16,6 +17,7 @@ class CustomTextField extends StatelessWidget {
         color: kTextFieldColor.withOpacity(0.1),
       ),
       child: TextFormField(
+        controller: controller,
         style: const TextStyle(
           color: Colors.black,
           fontSize: 15,
