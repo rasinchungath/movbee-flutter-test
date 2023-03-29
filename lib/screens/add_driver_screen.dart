@@ -50,7 +50,7 @@ class AddDriverScreen extends StatelessWidget {
               buttonColor: kRedBGColor,
               onpressed: () async {
                 await pro.addDriver(name: nameController.text, mobile: '123456', license_no: lisenceController.text, context: context);
-                print('sucesss');
+                Navigator.pop(context);
               },
               textColor: kWhiteBGColor,
             ),

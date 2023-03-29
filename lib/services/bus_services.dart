@@ -104,10 +104,12 @@ class BusServices {
     });
     try {
       final response = await http.delete(url, headers: headers, body: body,);
-      if (response.statusCode == 200) {
+      if (response.statusCode == 204) {
         var data = jsonDecode(response.body);
         print(data);
         return data;
+      }else{
+        print(response.statusCode);
       }
     } catch (e) {
       throw Exception('failed to delete driver');

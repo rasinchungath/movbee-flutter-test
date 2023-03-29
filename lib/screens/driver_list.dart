@@ -48,7 +48,9 @@ class DriversList extends StatelessWidget {
                       padding: EdgeInsets.only(bottom: 15),
                       child: BusManageCard(
                         onpressed: ()async{
-                          await pro.deleteDriver(driverId: pro.driverdata!['driver_list'][index]['id'], context: context);
+                          //print( pro.driverdata!['driver_list'][index]['id']);
+                          await pro.deleteDriver(driverId: pro.driverdata!['driver_list'][index]['id'].toString(), context: context);
+                          
                         },
                         image: 'assets/images/Ellipse.png',
                         title: pro.driverdata!['driver_list'][index]['name'],
