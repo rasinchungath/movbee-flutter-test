@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
 
-import '../provider/login_controller.dart';
+import '../provider/controller.dart';
 
 class BusServices {
   Future<void> getBusList({
@@ -12,6 +12,7 @@ class BusServices {
     final pro = Provider.of<Controller>(context, listen: false);
     var urlId = pro.data!['url_id'];
     var token = pro.data!['access'];
+    var apikey = pro.data!['refresh'];
 
     var url =
         Uri.parse('http://flutter.noviindus.co.in/api/BusListApi/$urlId/');
@@ -75,7 +76,11 @@ class BusServices {
       "license_no": license_no,
     });
     try {
-      final response = await http.post(url, headers: headers, body: body,);
+      final response = await http.post(
+        url,
+        headers: headers,
+        body: body,
+      );
       if (response.statusCode == 200) {
         var data = jsonDecode(response.body);
         print(data);
@@ -86,9 +91,8 @@ class BusServices {
     }
   }
 
-
-  Future deleteDriver({required String driverId, required BuildContext context}) async {
-
+  Future deleteDriver(
+      {required String driverId, required BuildContext context}) async {
     final pro = Provider.of<Controller>(context, listen: false);
     var urlId = pro.data!['url_id'];
     var token = pro.data!['access'];
@@ -98,27 +102,24 @@ class BusServices {
       'Accept': 'application/json',
       'Authorization': 'Bearer $token',
     };
-     final body = json.encode({
+    final body = json.encode({
       "driver_id": driverId,
-      
     });
     try {
-      final response = await http.delete(url, headers: headers, body: body,);
+      final response = await http.delete(
+        url,
+        headers: headers,
+        body: body,
+      );
       if (response.statusCode == 204) {
         var data = jsonDecode(response.body);
         print(data);
         return data;
-      }else{
+      } else {
         print(response.statusCode);
       }
     } catch (e) {
       throw Exception('failed to delete driver');
     }
-   
-
   }
-
-
-
-
 }

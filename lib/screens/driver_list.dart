@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:machine_test/constants/colors.dart';
 import 'package:provider/provider.dart';
 import '../custom widgets/custom_button.dart';
-import '../provider/login_controller.dart';
+import '../provider/controller.dart';
 import '../utils/appbars.dart';
 import '../utils/bus_manage_card.dart';
 import 'add_driver_screen.dart';

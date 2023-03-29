@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:machine_test/constants/colors.dart';
 import 'package:machine_test/custom%20widgets/custom_button.dart';
 import 'package:machine_test/custom%20widgets/snackbar.dart';
-import 'package:machine_test/provider/login_controller.dart';
+import 'package:machine_test/provider/controller.dart';
 import 'package:machine_test/screens/home_screen.dart';
 import 'package:machine_test/services/bus_services.dart';
 import 'package:provider/provider.dart';

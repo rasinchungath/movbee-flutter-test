@@ -3,7 +3,7 @@ import 'package:machine_test/constants/colors.dart';
 import 'package:machine_test/custom%20widgets/custom_textfield.dart';
 import 'package:provider/provider.dart';
 import '../custom widgets/custom_button.dart';
-import '../provider/login_controller.dart';
+import '../provider/controller.dart';
 import '../utils/appbars.dart';
 
 class AddDriverScreen extends StatelessWidget {

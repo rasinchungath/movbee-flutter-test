@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:machine_test/constants/colors.dart';
-import 'package:machine_test/provider/login_controller.dart';
+import 'package:machine_test/provider/controller.dart';
 import 'package:machine_test/screens/add_driver_screen.dart';
 import 'package:machine_test/screens/bus_detail_screen.dart';
 import 'package:machine_test/screens/driver_list.dart';
